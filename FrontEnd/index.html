@@ -47,34 +47,11 @@
                 </div>
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Salvar</button>
-                    <button v-on:click="abreExcluir()" :disabled="consulta.id==null" class="btn btn-danger mt-3">Excluir</button>
-                    <button v-on:click="cancelar()" class="btn btn-warning mt-3">Cancelar</button>
-                </div>
-            </div>
+                    <button v-on:click="cancelar()" class="btn btn-warning mt-3">Cancelar</button>   
+                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/FrontEnd/historico.html">Historico</a></button>  
+                </div>   
         </fieldset>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th style="width: 35%;">Paciente</th>
-                    <th style="width: 25%;">Especialidade</th>
-                    <th style="width: 10%;">Data</th>
-                    <th style="width: 10%;">Horario</th>
-                    <th style="width: 10%;">Idade</th>
-                    <th style="width: 10%;">Atendido</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="cursor: pointer" v-for="c in consultas" v-on:click="selecionar(c)">
-                    <td>{{c.paciente}}</td>
-                    <td>{{c.especialidade}}</td>
-                    <td>{{c.dataStr}}</td>
-                    <td>{{c.horario}}</td>
-                    <td>{{c.idadeAt}}</td>
-                    <td>{{c.atendido}}</td>
-                </tr>
-            </tbody>
-        </table>
-
+        
         <div id="modalexc"class="modal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
