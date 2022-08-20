@@ -48,7 +48,7 @@
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Salvar</button>
                     <button v-on:click="cancelar()" class="btn btn-warning mt-3">Cancelar</button>   
-                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/FrontEnd/historico.html">Historico</a></button>  
+                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/historico.html">Historico</a></button>  
                 </div>   
         </fieldset>
         
@@ -120,6 +120,7 @@
                     m.show();
                 },
                 //excluir consulta por id
+                //papel do historico
                 excluir() {
                     let _this = this;
                     if (_this.consulta.id != null){
