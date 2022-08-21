@@ -27,8 +27,33 @@
                 </div>
                 <div class="col-md-12 col-lg-8">
                     <label class="form-label" for="inpEspecialidade">Especialidade:</label>
-                    <input v-model="consulta.especialidade" class="form-control" type="text" id="inpEspecialidade" />
+                    <select v-model="consulta.especialidade" class="form-select" id="inpEspecialidade" aria-label="Default select example">
+                        <option value="cardiologista">Cardiologista</option>
+                        <option value="clinico geral">Clínico geral</option>
+                        <option value="dermatologista">Dermatologista</option>
+                        <option value="endocrinologista">Endocrinologista</option>
+                        <option value="gastroenterologista">gastroenterologista</option>
+                        <option value="geriatra">Geriatra</option>
+                        <option value="ginecologista">Ginecologista</option>
+                        <option value="hematologista">Hematologista</option>
+                        <option value="infectologista">Infectologista</option>
+                        <option value="nefrologista">Nefrologista</option>
+                        <option value="neurologista">Neurologista</option>
+                        <option value="nutricionista">Nutricionista</option>
+                        <option value="oftalmologista">Oftalmologista</option>
+                        <option value="oncologista">Oncologista</option>
+                        <option value="ortopedista">Ortopedista</option>
+                        <option value="otorrinolaringologista">Otorrinolaringologista</option>
+                        <option value="pediatra">Pediatra</option>
+                        <option value="pneumologista">Pneumologista</option>
+                        <option value="psicologo">Psicólogo</option>
+                        <option value="psiquiatra">Psiquiatra</option>
+                        <option value="radiologista">Radiologista</option>
+                        <option value="reumatologista">Reumatologista</option>
+                        <option value="urologista">Urologista</option>
+                    </select>
                 </div>
+
                 <div class="col-md-12 col-lg-4">
                     <label class="form-label" for="inpDataStr">Data:</label>
                     <input v-model="consulta.dataStr" class="form-control" type="date" id="inpDataStr" />
@@ -48,7 +73,7 @@
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Salvar</button>
                     <button v-on:click="cancelar()" class="btn btn-warning mt-3">Cancelar</button>   
-                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/historico.html">Historico</a></button>  
+                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/FrontEnd/historico.html">Historico</a></button>  
                 </div>   
         </fieldset>
         
