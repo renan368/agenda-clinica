@@ -23,7 +23,7 @@ public class HistoricoController {
         return consultas;
     }
     
-    @DeleteMapping("/exclui")
+    @GetMapping("/exclui")
     public void exclui(Long id) {
         repository.deleteById(id);
     }
