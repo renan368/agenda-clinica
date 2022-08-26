@@ -30,5 +30,6 @@ public class Consulta {
     private String especialidade;
     private String medico;
     private String idadeAt;
+    private String exame;
     private Boolean atendido;
 }
