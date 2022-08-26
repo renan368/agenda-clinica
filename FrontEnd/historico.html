@@ -24,9 +24,13 @@
                     <label class="form-label" for="inpPaciente">Paciente:</label>
                     <input v-model="consulta.paciente" class="form-control" type="text" id="inpPaciente" />
                 </div>
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-4">
                     <label class="form-label" for="inpEspecialidade">Especialidade:</label>
                     <input v-model="consulta.especialidade" class="form-control" type="text" id="inpEspecialidade" />
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <label class="form-label" for="inpMedico">Médico:</label>
+                    <input v-model="consulta.medico" class="form-control" type="text" id="inpMedico" />
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <label class="form-label" for="inpDataStr">Data:</label>
@@ -57,6 +61,7 @@
                 <tr>
                     <th style="width: 35%;">Paciente</th>
                     <th style="width: 25%;">Especialidade</th>
+                    <th style="width: 25%;">Médico</th>
                     <th style="width: 10%;">Data</th>
                     <th style="width: 10%;">Horario</th>
                     <th style="width: 10%;">Idade</th>
@@ -67,6 +72,7 @@
                 <tr style="cursor: pointer" v-for="c in consultas" v-on:click="selecionar(c)">
                     <td>{{c.paciente}}</td>
                     <td>{{c.especialidade}}</td>
+                    <td>{{c.medico}}</td>
                     <td>{{c.dataStr}}</td>
                     <td>{{c.horario}}</td>
                     <td>{{c.idadeAt}}</td>

@@ -28,6 +28,7 @@ public class Consulta {
     private String dataStr;
     private String horario;
     private String especialidade;
+    private String medico;
     private String idadeAt;
     private Boolean atendido;
 }
