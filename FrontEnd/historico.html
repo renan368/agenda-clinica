@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
     
@@ -25,30 +24,38 @@
                     <label class="form-label" for="inpPaciente">Paciente:</label>
                     <input v-model="consulta.paciente" class="form-control" type="text" id="inpPaciente" />
                 </div>
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-4">
                     <label class="form-label" for="inpEspecialidade">Especialidade:</label>
                     <input v-model="consulta.especialidade" class="form-control" type="text" id="inpEspecialidade" />
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <label class="form-label" for="inpMedico">Médico:</label>
+                    <input v-model="consulta.medico" class="form-control" type="text" id="inpMedico" />
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <label class="form-label" for="inpDataStr">Data:</label>
                     <input v-model="consulta.dataStr" class="form-control" type="date" id="inpDataStr" />
                 </div>
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-3">
                     <label class="form-label" for="inpHorario">Horario:</label>
                     <input v-model="consulta.horario" class="form-control" type="text" id="inpHorario" />
                 </div>
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-3">
                     <label class="form-label" for="inpIdadeAt">Idade:</label>
                     <input v-model="consulta.idadeAt" class="form-control" type="text" id="inpIdadeAt" />
                 </div>
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-3">
+                    <label class="form-label" for="inpExame">Pedido Exame:</label>
+                    <input v-model="consulta.exame" class="form-control" type="text" id="inpExame" />
+                </div>
+                <div class="col-md-12 col-lg-3">
                     <label class="form-label" for="inpAtendido">Atendido:</label>
                     <input v-model="consulta.atendido" class="form-control" type="text" id="inpAtendido" />
                 </div>
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Alterar</button>
                     <button v-on:click="abreExcluir()" :disabled="consulta.id==null" class="btn btn-danger mt-3">Excluir</button>
-                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/index.html">Cadastrar</a></button>
+                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/FrontEnd/index.html">Cadastrar</a></button>
                 </div>
             </div>
         </fieldset>
@@ -56,11 +63,13 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th style="width: 35%;">Paciente</th>
-                    <th style="width: 25%;">Especialidade</th>
+                    <th style="width: 22%;">Paciente</th>
+                    <th style="width: 18%;">Especialidade</th>
+                    <th style="width: 16%;">Médico</th>
                     <th style="width: 10%;">Data</th>
-                    <th style="width: 10%;">Horario</th>
-                    <th style="width: 10%;">Idade</th>
+                    <th style="width: 8%;">Horario</th>
+                    <th style="width: 8%;">Idade</th>
+                    <th style="width: 8%;">P. Exame</th>
                     <th style="width: 10%;">Atendido</th>
                 </tr>
             </thead>
@@ -68,9 +77,11 @@
                 <tr style="cursor: pointer" v-for="c in consultas" v-on:click="selecionar(c)">
                     <td>{{c.paciente}}</td>
                     <td>{{c.especialidade}}</td>
+                    <td>{{c.medico}}</td>
                     <td>{{c.dataStr}}</td>
                     <td>{{c.horario}}</td>
                     <td>{{c.idadeAt}}</td>
+                    <td>{{c.exame}}</td>
                     <td>{{c.atendido}}</td>
                 </tr>
             </tbody>
