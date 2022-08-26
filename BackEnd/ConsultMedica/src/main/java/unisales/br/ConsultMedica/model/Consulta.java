@@ -9,11 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- *
- * @author Jean Carlos
- */
-
 @Getter
 @Setter
 @Entity

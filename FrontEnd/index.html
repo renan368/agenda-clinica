@@ -80,27 +80,10 @@
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Salvar</button>
                     <button v-on:click="cancelar()" class="btn btn-warning mt-3">Cancelar</button>   
-                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/FrontEnd/historico.html">Historico</a></button>  
+                    <button type="button" class="btn btn-info mt-3 mx-xxl-5"><a href="/historico.html">Historico</a></button>  
                 </div>   
         </fieldset>
-        
-        <div id="modalexc"class="modal" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Confirmar</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>Confirma a Exclusão?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                  <button v-on:click="excluir()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Sim</button>
-                </div>
-              </div>
-            </div>
-          </div>
+    
     </div>
     <script>
         var vapp = new Vue({
@@ -123,14 +106,6 @@
                         console.log(_this.consultas);  
                     });
                 },
-                //seleciona consulta por id
-                selecionar(c){
-                    let _this = this;
-                    axios.get("http://localhost:8090/consulta/get?id=" + c.id).then((r) => {
-                        _this.consulta = r.data;
-                        console.log(_this.consulta);  
-                    });
-                },
                 //salvar consulta
                 salvar() {
                     let _this = this;
@@ -145,22 +120,6 @@
                             _this.cancelar();
                         });
                     }    
-                },
-
-                abreExcluir(){
-                    let m = new bootstrap.Modal('#modalexc', {});
-                    m.show();
-                },
-                //excluir consulta por id
-                //papel do historico
-                excluir() {
-                    let _this = this;
-                    if (_this.consulta.id != null){
-                    axios.get(`http://localhost:8090/consulta/exclui?id=${_this.consulta.id}`).then(() => {
-                            _this.selecionaConsultas();
-                            _this.cancelar();
-                        });
-                    }
                 },
 
                 cancelar() {
