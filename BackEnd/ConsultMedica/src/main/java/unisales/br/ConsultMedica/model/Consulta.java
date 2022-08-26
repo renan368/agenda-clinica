@@ -27,4 +27,5 @@ public class Consulta {
     private String idadeAt;
     private String exame;
     private Boolean atendido;
+    private String contato;
 }

@@ -56,6 +56,10 @@
                     <label class="form-label" for="inpContato">Contato:</label>
                     <input v-model="consulta.contato" class="form-control" type="text" id="inpContato" />
                 </div>
+                <div class="col-md-12 col-lg-9">
+                    <label class="form-label" for="inpObservacao">Observação:</label>
+                    <input v-model="consulta.observacao" class="form-control" type="text" id="inpobservacao" />
+                </div>
                 <div class="col-md-12 text-center">
                     <button v-on:click="salvar()" class="btn btn-primary mt-3">Alterar</button>
                     <button v-on:click="abreExcluir()" :disabled="consulta.id==null" class="btn btn-danger mt-3">Excluir</button>
@@ -76,6 +80,7 @@
                     <th style="width: 8%;">P. Exame</th>
                     <th style="width: 10%;">Atendido</th>
                     <th style="width: 10%;">Contato</th>
+                    <th style="width: 10%;">Observacao</th>
                 </tr>
             </thead>
             <tbody>
@@ -89,6 +94,7 @@
                     <td>{{c.exame}}</td>
                     <td>{{c.atendido}}</td>
                     <td>{{c.contato}}</td>
+                    <td>{{c.observacao}}</td>
                 </tr>
             </tbody>
         </table>
