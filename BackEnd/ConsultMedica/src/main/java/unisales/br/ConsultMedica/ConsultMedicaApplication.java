@@ -1,10 +1,7 @@
 package unisales.br.ConsultMedica;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
@@ -64,10 +61,9 @@ public class ConsultMedicaApplication {
                         )
                 )
                 .info(new Info()
-                        .title("Servidor de tarefas")
+                        .title("Agenda Clinica")
                         .version("1.0.0")
-                        .contact(new Contact().email("rdouro@salesiano.br").name("Rômulo F. Douro"))
-                        .description("Exemplo de REST API para tarefas")
+                        .description("REST API para agenda clinica")
                 );
     }
 }
