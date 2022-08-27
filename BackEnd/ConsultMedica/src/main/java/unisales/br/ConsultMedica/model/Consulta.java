@@ -28,4 +28,6 @@ public class Consulta {
     private String exame;
     private Boolean atendido;
     private String contato;
+    private String observacao;
+    private Boolean pcd;
 }
