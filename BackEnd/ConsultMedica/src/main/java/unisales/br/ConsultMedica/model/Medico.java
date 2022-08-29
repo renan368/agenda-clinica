@@ -14,20 +14,18 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor 
 @AllArgsConstructor
-public class Consulta {
-   
+public class Medico {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String paciente;
-    private String dataStr;
-    private String horario;
+   
+    private String name;
+    private String cpf;
     private String especialidade;
-    private String medico;
-    private String idadeAt;
-    private String exame;
-    private Boolean atendido;
-    private String contato;
-    private String observacao;
-    private Boolean pcd;
+    private Integer idade;
+    private String email;
+    private String telefone;
+
+    
 }
