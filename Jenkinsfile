@@ -1,30 +1,32 @@
 pipeline {
     agent any
+
     tools {
-        maven "maven_3_5_0"
-        jdk "jdk"
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
     }
+
     stages {
-        stage('Initialize'){
-            steps{
-                echo "PATH = ${M2_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
-            }
-        }
         stage('Build') {
             steps {
-                dir("C:\Users\thiago.sante\Documents\GitHub\agenda-clinica") {
-                bat 'mvn -B -DskipTests clean package'
+                // Get some code from a GitHub repository
+                git 'https://github.com/renan368/agenda-clinica.git'
+
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
                 }
             }
         }
-     }
-    post {
-       always {
-          junit(
-        allowEmptyResults: true,
-        testResults: '*/test-reports/.xml'
-      )
-      }
-   } 
+    }
 }
